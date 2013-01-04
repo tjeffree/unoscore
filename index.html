@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>UNO Score</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-536128-11"]);_gaq.push(["_trackPageview"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();
+</script>
+</head>
+<body>
+
+<h1>UNO Score</h1>
+
+<select id="player-count">
+    <option value="2">2 players</option>
+    <option value="3">3 players</option>
+    <option value="4">4 players</option>
+    <option value="5">5 players</option>
+    <option value="6">6 players</option>
+</select>
+
+<input type="button" id="start-game" value="Start Game" />
+
+<h2 id="round-head">Round <span id="round-number">1</span></h2>
+
+<div id="current-score">
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Wins</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>
+
+<div id="game-container">
+
+    <h3 id="winner-name"></h3>
+
+    <p>Select all the remaining cards.</p>
+
+    <div id="cards">
+
+
+        <div class="uno-card uno-draw-four" data-value="50">
+            <div class="uno-top">+4</div>
+            <div class="uno-middle uno-pack">
+                <div class="uno-card-mini"><div></div></div>
+                <div class="uno-card-mini"><div></div></div>
+                <div class="uno-card-mini"><div></div></div>
+                <div class="uno-card-mini"><div></div></div>
+            </div>
+            <div class="uno-bottom">+4</div>
+        </div>
+
+        <div class="uno-card uno-wild" data-value="50">
+            <div class="uno-top">
+                <div class="uno-pack uno-all">
+                    <div class="uno-card-mini"><div></div></div>
+                    <div class="uno-card-mini"><div></div></div>
+                    <div class="uno-card-mini"><div></div></div>
+                    <div class="uno-card-mini"><div></div></div>
+                </div>
+            </div>
+            <div class="uno-middle">
+                <div></div>
+            </div>
+            <div class="uno-bottom">
+                <div class="uno-pack uno-all">
+                    <div class="uno-card-mini"><div></div></div>
+                    <div class="uno-card-mini"><div></div></div>
+                    <div class="uno-card-mini"><div></div></div>
+                    <div class="uno-card-mini"><div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="uno-card uno-draw-two blue" data-value="20">
+            <div class="uno-top">+2</div>
+            <div class="uno-middle uno-pack">
+                <div class="uno-card-mini"><div></div></div>
+                <div class="uno-card-mini"><div></div></div>
+            </div>
+            <div class="uno-bottom">+2</div>
+        </div>
+
+        <div class="uno-card green" data-value="20">
+            <div class="uno-top">Skip</div>
+            <div class="uno-middle">
+                <div class="uno-skip"><div></div></div>
+            </div>
+            <div class="uno-bottom">Skip</div>
+        </div>
+
+        <div class="uno-card yellow" data-value="20">
+            <div class="uno-top">Reverse</div>
+            <div class="uno-middle">
+                <div class="uno-reverse"><span>&larr;</span><span class="right">&rarr;</span></div>
+            </div>
+            <div class="uno-bottom">Reverse</div>
+        </div>
+
+        <div class="uno-card red" data-value="9">
+            <div class="uno-top">9</div>
+            <div class="uno-middle">9</div>
+            <div class="uno-bottom">9</div>
+        </div>
+
+        <div class="uno-card blue" data-value="8">
+            <div class="uno-top">8</div>
+            <div class="uno-middle">8</div>
+            <div class="uno-bottom">8</div>
+        </div>
+
+        <div class="uno-card green" data-value="7">
+            <div class="uno-top">7</div>
+            <div class="uno-middle">7</div>
+            <div class="uno-bottom">7</div>
+        </div>
+
+        <div class="uno-card yellow" data-value="6">
+            <div class="uno-top">6</div>
+            <div class="uno-middle">6</div>
+            <div class="uno-bottom">6</div>
+        </div>
+
+        <div class="uno-card red" data-value="5">
+            <div class="uno-top">5</div>
+            <div class="uno-middle">5</div>
+            <div class="uno-bottom">5</div>
+        </div>
+
+        <div class="uno-card blue" data-value="4">
+            <div class="uno-top">4</div>
+            <div class="uno-middle">4</div>
+            <div class="uno-bottom">4</div>
+        </div>
+
+        <div class="uno-card green" data-value="3">
+            <div class="uno-top">3</div>
+            <div class="uno-middle">3</div>
+            <div class="uno-bottom">3</div>
+        </div>
+
+        <div class="uno-card yellow" data-value="2">
+            <div class="uno-top">2</div>
+            <div class="uno-middle">2</div>
+            <div class="uno-bottom">2</div>
+        </div>
+
+        <div class="uno-card red" data-value="1">
+            <div class="uno-top">1</div>
+            <div class="uno-middle">1</div>
+            <div class="uno-bottom">1</div>
+        </div>
+
+        <div class="uno-card green" data-value="0">
+            <div class="uno-top">0</div>
+            <div class="uno-middle">0</div>
+            <div class="uno-bottom">0</div>
+        </div>
+
+        <!--ul>
+            <li class="card card-4wild" data-value="50">+4 Wildcard</li>
+            <li class="card card-wild" data-value="50">Wildcard</li>
+            <li class="card card-plus" data-value="20">+2</li>
+            <li class="card card-skip" data-value="20">Skip</li>
+            <li class="card card-reverse" data-value="20">Reverse</li>
+            <li class="card card-9" data-value="9">9</li>
+            <li class="card card-8" data-value="8">8</li>
+            <li class="card card-7" data-value="7">7</li>
+            <li class="card card-6" data-value="6">6</li>
+            <li class="card card-5" data-value="5">5</li>
+            <li class="card card-4" data-value="4">4</li>
+            <li class="card card-3" data-value="3">3</li>
+            <li class="card card-2" data-value="2">2</li>
+            <li class="card card-1" data-value="1">1</li>
+            <li class="card card-0" data-value="0">0</li>
+        </ul-->
+
+        <br style="clear:both;" />
+
+        <input type="button" id="clear-round" value="Undo points for this round" />
+
+        <input type="button" id="next-round" value="Next Round" />
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
+<script type="text/javascript" src="unoscore.js"></script>
+
+</body>
+</html>
